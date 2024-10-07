@@ -4,10 +4,10 @@ import SubReddits from './features/SubReddits/SubReddits';
 
 function App() {
   return (
-    <>
-      <Header />
+    <main>
       <SubReddits />
-    </>
+      <Header />
+    </main>
   );
 }
 

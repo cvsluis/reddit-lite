@@ -12,7 +12,7 @@ export const loadSubReddits = createAsyncThunk(
   async () => {
     const data = await fetch(`${API_ROOT}/subreddits.json`);
     const json = await data.json();
-    return json.data.children.map(subReddit => { return subReddit.data.title; });
+    return json.data.children.map(subReddit => { return subReddit.data.display_name; });
   }
 );
 

@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import './SubReddits.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAllSubReddits, isLoading, loadSubReddits } from '../../store/subRedditsSlice';
 
@@ -17,14 +18,17 @@ const SubReddits = () => {
   }
 
   return (
-    <section>
-      <h2>Subreddits</h2>
+    <aside>
+      <div className='search'>
+        <input className='search-input' placeholder='Search' />
+      </div>
+      <h2 className='subheading'>Subreddits</h2>
       {subReddits.map((subReddit, index) => (
         <div key={index}>
           {subReddit}
         </div>
       ))}
-    </section>
+    </aside>
   );
 };
 
