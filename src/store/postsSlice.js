@@ -7,8 +7,9 @@ const initialState = {
 };
 
 const API_ROOT = "https://www.reddit.com";
-export const loadPosts = createAsyncThunk("posts/loadPosts", async () => {
-  const data = await fetch(`${API_ROOT}/r/home.json`);
+export const loadPosts = createAsyncThunk("posts/loadPosts", async (_, { getState }) => {
+  const state = getState();
+  const data = await fetch(`${API_ROOT}/${state.subReddits.selectedSubReddit}.json`);
   const json = await data.json();
   return json.data.children.map((post) => {
     return post.data;

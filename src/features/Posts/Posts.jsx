@@ -8,10 +8,12 @@ const Posts = () => {
   const dispatch = useDispatch();
   const posts = useSelector(selectAllPosts);
   const isLoadingPosts = useSelector(isLoading);
+  const selectedSubReddit = useSelector((state) => state.subReddits.selectedSubReddit)
+
 
   useEffect(() => {
     dispatch(loadPosts());
-  }, [dispatch]);
+  }, [dispatch, selectedSubReddit]);
 
   if (isLoadingPosts) {
     return <div>Loading posts...</div>;

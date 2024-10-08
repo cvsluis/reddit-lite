@@ -5,6 +5,7 @@ import {
   selectAllSubReddits,
   isLoading,
   loadSubReddits,
+  setSelectedSubReddit,
 } from "../../store/subRedditsSlice";
 
 const SubReddits = () => {
@@ -17,14 +18,26 @@ const SubReddits = () => {
   }, [dispatch]);
 
   return (
-    <>
+    <div className="subreddit-container">
       <h2 className="subheading">Subreddits</h2>
-      {isLoadingSubReddits
-        ? "Loading..."
-        : subReddits.map((subReddit, index) => (
-            <div key={index}>{subReddit}</div>
+      <div className="subreddit-container">
+        {isLoadingSubReddits
+          ? "Loading..."
+          : subReddits.map((subReddit, index) => (
+            <div
+              key={index}
+              className="subreddit"
+              onClick={() =>
+                dispatch(
+                  setSelectedSubReddit(subReddit.display_name_prefixed)
+                )
+              }
+            >
+              {subReddit.display_name}
+            </div>
           ))}
-    </>
+      </div>
+    </div>
   );
 };
 
