@@ -1,0 +1,23 @@
+aside {
+  width: 25%;
+  max-width: 275px;
+  background-color: #F7F9FB;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.search {
+  display: flex;
+}
+
+.search-input {
+  height: 30px;
+  border-radius: 8px;
+  background-color: #EAF0F4;
+  border: none;
+  padding: 4px 16px;
+  width: 100%;
+  font-size: 16px;
+}

@@ -1,13 +1,18 @@
 import './App.css';
+import Aside from './components/Aside/Aside';
 import { Header } from './components/Header/Header';
-import SubReddits from './features/SubReddits/SubReddits';
+import Posts from './features/Posts/Posts';
 
 function App() {
   return (
-    <main>
-      <SubReddits />
-      <Header />
-    </main>
+    <div className='body'>
+      <Aside />
+      <main>
+        <div className='background'></div>
+        <Header />
+        <Posts />
+      </main>
+    </div>
   );
 }
 

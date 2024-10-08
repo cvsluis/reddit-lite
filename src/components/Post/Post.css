@@ -1,0 +1,46 @@
+.post {
+  max-width: 100%;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 24px;
+  margin: 0 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: #f9f9fa;
+  background-color: #fff;
+  box-shadow: rgba(232, 235, 237, 0.616) 0px 8px 24px;
+}
+
+.post-image {
+  max-width: 100%;
+  border-radius: 10px;
+  color: rgb(247, 249, 251);
+}
+
+.post-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.post-button {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+}
+
+.up-arrow {
+  transform: rotate(180deg);
+}
+
+.up-arrow:hover {
+  cursor: pointer;
+  color:  green;
+}
+
+.down-arrow:hover {
+  cursor: pointer;
+  color: red;
+}
