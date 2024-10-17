@@ -12,6 +12,9 @@ const SubReddits = () => {
   const dispatch = useDispatch();
   const subReddits = useSelector(selectAllSubReddits);
   const isLoadingSubReddits = useSelector(isLoading);
+  const selectedSubReddit = useSelector(
+    (state) => state.subReddits.selectedSubReddit
+  );
 
   useEffect(() => {
     dispatch(loadSubReddits());
@@ -26,12 +29,10 @@ const SubReddits = () => {
           : subReddits.map((subReddit, index) => (
             <div
               key={index}
-              className="subreddit"
-              onClick={() =>
-                dispatch(
-                  setSelectedSubReddit(subReddit.display_name_prefixed)
-                )
-              }
+              className={`subreddit ${subReddit.display_name_prefixed === selectedSubReddit &&
+                "subreddit-selected"
+                }`}
+              onClick={() => dispatch(setSelectedSubReddit(subReddit.display_name_prefixed))}
             >
               {subReddit.display_name}
             </div>

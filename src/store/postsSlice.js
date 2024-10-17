@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 const initialState = {
   posts: [],
   isLoading: false,
-  hasError: false,
+  hasError: false
 };
 
 const API_ROOT = "https://www.reddit.com";

@@ -1,0 +1,29 @@
+.comment {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  flex: 0 0 auto;
+}
+
+.comment-img {
+  height: 24px;
+  min-width: 24px;
+  max-width: 24px;
+}
+
+.comment-text {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.comment-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.comment-time {
+  color: #afafaf;
+}

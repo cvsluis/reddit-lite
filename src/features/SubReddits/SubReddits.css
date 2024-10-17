@@ -15,7 +15,11 @@
   padding: 10px 14px;
 }
 
+.subreddit-selected {
+  background-color: #EAF0F4;
+}
+
 .subreddit:hover {
   cursor: pointer;
-  background-color: #EAF0F4;
+  background-color: #e1e9f2;
 }

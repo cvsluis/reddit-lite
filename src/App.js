@@ -1,5 +1,6 @@
 import './App.css';
 import Aside from './components/Aside/Aside';
+import Comments from './features/Comments/Comments';
 import { Header } from './components/Header/Header';
 import Posts from './features/Posts/Posts';
 
@@ -12,6 +13,7 @@ function App() {
         <Header />
         <Posts />
       </main>
+      <Comments />
     </div>
   );
 }

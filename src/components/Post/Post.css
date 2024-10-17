@@ -30,6 +30,9 @@
   gap: 8px;
   align-items: center;
 }
+.post-button:hover {
+  cursor: pointer;
+}
 
 .up-arrow {
   transform: rotate(180deg);

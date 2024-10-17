@@ -1,9 +1,15 @@
+import { useDispatch } from "react-redux";
 import "./Post.css";
+import { loadComments } from "../../store/commentsSlice";
 
 const Post = ({ post }) => {
+  const dispatch = useDispatch();
+
   return (
     <article className="post">
+      <p>@{post.author}</p>
       <h3>{post.title}</h3>
+      <p>{post.selftext}</p>
       {post.url && <img src={post.url} className="post-image" />}
       <div className="post-buttons">
         <div className="post-button">
@@ -33,7 +39,10 @@ const Post = ({ post }) => {
             </svg>
           </span>
         </div>
-        <div className="post-button">
+        <div
+          className="post-button"
+          onClick={() => dispatch(loadComments(post))}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -47,7 +56,7 @@ const Post = ({ post }) => {
           <span>{post.num_comments}</span>
         </div>
       </div>
-    </article>
+    </article >
   );
 };
 
