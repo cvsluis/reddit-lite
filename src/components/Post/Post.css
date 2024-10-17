@@ -12,6 +12,10 @@
   box-shadow: rgba(232, 235, 237, 0.616) 0px 8px 24px;
 }
 
+.post-text {
+  overflow-wrap: break-word;
+}
+
 .post-image {
   max-width: 100%;
   border-radius: 10px;

@@ -1,6 +1,9 @@
 import './Comment.css';
+import { format } from 'timeago.js';
 
 const Comment = ({ comment }) => {
+  const timeago = format(new Date(comment.created_utc * 1000));
+
   return (
     <div className='comment'>
       <div className='comment-img'>
@@ -12,7 +15,7 @@ const Comment = ({ comment }) => {
       <div className='comment-text'>
         <div className='comment-header'>
           <p className='comment-name'>{comment.author}</p>
-          <span className='comment-time'>comment time</span>
+          <span className='comment-time'>{timeago}</span>
         </div>
         <p>{comment.body}</p>
       </div>

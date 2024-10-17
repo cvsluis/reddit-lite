@@ -1,15 +1,20 @@
 import { useDispatch } from "react-redux";
+import { format } from 'timeago.js';
 import "./Post.css";
 import { loadComments } from "../../store/commentsSlice";
 
 const Post = ({ post }) => {
   const dispatch = useDispatch();
-
+  const timeago = format(new Date(post.created_utc * 1000));
   return (
     <article className="post">
-      <p>@{post.author}</p>
+      <div className="comment-header">
+        <p>@{post.author}</p>
+        <span className="comment-time">{timeago}</span>
+      </div>
+
       <h3>{post.title}</h3>
-      <p>{post.selftext}</p>
+      {!!post.selftext && <p className="post-text">{post.selftext}</p>}
       {post.url && <img src={post.url} className="post-image" />}
       <div className="post-buttons">
         <div className="post-button">
